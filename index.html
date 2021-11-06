@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo app</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  	<div class="stats">
+		<h3 class="stats-title">{{"Текущие задачи: " + tasks.length}}</h3>
+	</div>
+  <div v-for="(task,n) in tasks" class="task">
+
+    <div class="task-title">{{task}}</div>
+    <button @click="removeTask(n)">X</button>
+
+  </div>
+  
+ <form> <div class="add-task">
+    <input autofocus="" v-model="newTask" class="input" placeholder="Добавить задачу"> 
+    <button type="submit" @click="addTask">Add task</button>
+  </div> </form>
+  
+</div>
+
+
+
+<script src="main.js"></script>
+</body>
+</html>
+
+
